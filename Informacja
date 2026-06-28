@@ -1,0 +1,19 @@
+
+
+Rożnica miedzy jednym a drugim programem ?
+
+ Różnica między pierwszym a drugim programem — opis słowny
+
+W pierwszym programie Arduino sprawdzało, czy wartość odczytana z wejścia analogowego jest większa lub równa liczbie 675.
+
+ Ta liczba była wpisana na stałe i oznaczała poziom napięcia około 3.3 V. Program nie liczył napięcia, tylko porównywał surową wartość z przetwornika ADC.
+
+ To działa, ale jest mało elastyczne, bo jeśli zmieni się napięcie odniesienia albo użyjesz innej płytki, trzeba ręcznie przeliczać i zmieniać tę liczbę.
+
+W drugim programie Arduino najpierw przelicza surowy odczyt ADC na prawdziwe napięcie w voltach, używając wzoru wynikającego z działania przetwornika.
+
+Dopiero potem porównuje to napięcie z progiem zapisanym jako 3.3 V. Dzięki temu program nie operuje na „magicznych liczbach”, tylko na realnym napięciu.
+
+Jest dokładniejszy, bardziej czytelny i łatwiejszy do modyfikacji, bo próg napięcia można zmienić jednym wpisem, a reszta obliczeń zrobi się sama.
+
+
